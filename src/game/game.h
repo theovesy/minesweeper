@@ -1,6 +1,5 @@
 #pragma once
 #include "field.h"
-#include <vector>
 
 class Game
 {
