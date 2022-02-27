@@ -14,6 +14,9 @@ public:
 public:
 	void open_cell(int x, int y)
 	{
+		if (x<0 || y<0 || x > m_width || y > m_height)
+			return;
+		
 		Cell& cur_cell = m_field[x][y];
 		if(cur_cell.get_status() < CellStatus::OPEN)
 		{
@@ -26,6 +29,9 @@ public:
 
 	void flag_cell(int x, int y)
 	{
+		if (x<0 || y<0 || x > m_width || y > m_height)
+			return;
+		
 		Cell& cur_cell = m_field[x][y];
 		if (cur_cell.get_status() < CellStatus::FLAGGED)
 			cur_cell.set_status(CellStatus::FLAGGED);
@@ -47,6 +53,21 @@ public:
 		}
 
 		return output;
+	}
+
+	bool won()
+	{
+		for (int i = 0; i < m_width; i++)
+		{
+			for (int j = 0; j < m_height; j++)
+			{
+				Cell& cell = m_field[i][j];
+				if(cell.get_status() < CellStatus::OPEN && !cell.has_mine())
+					return false;
+			}
+		}
+
+		return true;
 	}
 
 

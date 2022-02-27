@@ -1,9 +1,10 @@
 ﻿#include <iostream>
-#include "game/game.h"
+#include "player/player.h"
 
 int main()
 {
 	std::cout << "Minesweeper." << std::endl;
-	Game game(1,1,4);
+	Player player(9,9,5);
+	player.play();
 	return 0;
 }

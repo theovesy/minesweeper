@@ -6,5 +6,5 @@ project(
     DESCRIPTION "Minesweeper game"
 )
 
-add_executable(main main.cpp game/game.cpp console/console.cpp)
+add_executable(main src/main.cpp src/game/game.cpp src/player/player.cpp)
 

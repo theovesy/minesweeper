@@ -14,7 +14,7 @@ public:
 
 	std::vector<std::vector<Output_Cell>> get_field();
 
-	bool win();
+	bool won();
 private:
 	Field field;
 };

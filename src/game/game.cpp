@@ -7,6 +7,8 @@ Game::Game(int width, int height, int n_mine) { field = Field(width, height, n_m
 void Game::open(int x, int y) { field.open_cell(x,y); }
 void Game::flag(int x, int y) { field.flag_cell(x, y); }
 
+bool Game::won() { return field.won(); }
+
 std::vector<std::vector<Output_Cell>> Game::get_field()
 {
    return field.output_field(); 
