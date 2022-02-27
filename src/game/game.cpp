@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "game.h"
 
 Game::Game() { field = Field(0, 0, 0); }
 Game::Game(int width, int height) { field = Field(width, height, 0); }
