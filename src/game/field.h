@@ -31,21 +31,40 @@ public:
 			cur_cell.set_status(CellStatus::FLAGGED);
 	}
 
+	std::vector<std::vector<Output_Cell>> output_field()
+	{
+		std::vector<std::vector<Output_Cell>> output = generate_field<Output_Cell>(m_width, m_height, Output_Cell());
+
+		for (int i = 0; i < m_width; i++)
+		{
+			for (int j = 0; j < m_height; j++)
+			{
+				Cell& cell = m_field[i][j];
+				output[i][j].status = cell.get_status();
+				if(cell.get_status() == CellStatus::OPEN)
+					output[i][j].prox = cell.get_proximity();
+			}
+		}
+
+		return output;
+	}
+
 
 private:
 	void construct(int width, int height, int n_mine)
 	{
 		m_width = width;
 		m_height = height;
-		m_field = generate_cell_field(width, height);
+		m_field = generate_field<Cell>(width, height, Cell());
 		set_mines(n_mine);
 		compute_proximity();
 	}
 
-	std::vector<std::vector<Cell>> generate_cell_field(int width, int height)
+	template<typename T>
+	std::vector<std::vector<T>> generate_field(int width, int height, T value)
 	{
-		std::vector<Cell> row(height, Cell());
-		std::vector<std::vector<Cell>> vect(width, row);
+		std::vector<T> row(height, value);
+		std::vector<std::vector<T>> vect(width, row);
 		return vect;
 	}
 
@@ -122,6 +141,7 @@ private:
 			}	
 		}
 	}
+
 
 private:
 	std::vector<std::vector<Cell>> m_field;

@@ -12,8 +12,9 @@ public:
 	void open(int x, int y);
 	void flag(int x, int y);
 
-	std::vector<std::vector<char>> get_field();
+	std::vector<std::vector<Output_Cell>> get_field();
 
+	bool win();
 private:
 	Field field;
 };

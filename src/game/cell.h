@@ -8,6 +8,12 @@ enum class CellStatus
 	MINE
 };
 
+struct Output_Cell
+{
+	int prox;
+	CellStatus status;
+};
+
 class Cell
 {
 public:
