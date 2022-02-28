@@ -1,10 +1,8 @@
 #include "player.h"
 
 Player::Player(int width, int height, int n_mine)
-    : m_width(width), m_height(height)
-{
-    game = Game(width, height, n_mine);
-}
+    : game(width, height, n_mine), m_width(width), m_height(height)
+    {}
 
 void Player::play()
 {

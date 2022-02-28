@@ -17,20 +17,19 @@ struct Output_Cell
 class Cell
 {
 public:
-	Cell() :m_mine(0), m_proximity(0), m_status(CellStatus::HIDDEN) {}
-
-	Cell(bool mine) :m_mine(mine), m_proximity(0), m_status(CellStatus::HIDDEN) {}
+	Cell() :m_status(CellStatus::HIDDEN), m_proximity(0), m_mine(false) {}
+	Cell(bool mine) :m_status(CellStatus::HIDDEN), m_proximity(0), m_mine(mine) {}
 
 public:
 	void set_proximity(int proximity) { m_proximity = proximity; }
-	int get_proximity() { return m_proximity; }
+	int get_proximity() const { return m_proximity; }
 
 	void set_status(CellStatus status) { m_status = status; }
-	CellStatus get_status() { return m_status; }
+	CellStatus get_status() const { return m_status; }
 
 	void put_mine() { m_mine = true; }
 	void rm_mine() { m_mine = false; }
-	bool has_mine() { return m_mine; }
+	bool has_mine() const { return m_mine; }
 
 private:
 	CellStatus m_status;
