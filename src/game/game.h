@@ -13,6 +13,7 @@ public:
 	void flag(int x, int y);
 
 	std::vector<std::vector<Output_Cell>> get_field();
+	bool has_mine(int x, int y) const;
 
 	bool won();
 private:

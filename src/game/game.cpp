@@ -13,3 +13,5 @@ std::vector<std::vector<Output_Cell>> Game::get_field()
 {
    return field.output_field(); 
 }
+
+bool Game::has_mine(int x, int y) const { return field.has_mine(x,y); }

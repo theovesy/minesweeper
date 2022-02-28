@@ -70,6 +70,7 @@ public:
 		return true;
 	}
 
+	bool has_mine(int x, int y) const { return m_field[x][y].has_mine(); }
 
 private:
 	void construct(int width, int height, int n_mine)

@@ -40,4 +40,5 @@ private:
 private:
     Game game;
     int m_width, m_height;
+    bool game_over;
 };
