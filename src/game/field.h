@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cell.h"
+#include "cell.h"
 #include <vector>
 #include <random>
 
