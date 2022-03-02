@@ -1,0 +1,1 @@
+add_library(minesweeper_game game.cpp)

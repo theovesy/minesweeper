@@ -4,5 +4,7 @@ CMakeFiles/
 
 *.exe
 *.cmake
+
+build.sh
 main
 CMakeCache.txt

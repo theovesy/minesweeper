@@ -2,7 +2,8 @@
 
 Player::Player(int width, int height, int n_mine)
     : game(width, height, n_mine), m_width(width), m_height(height), game_over(false)
-    {}
+    {
+    }
 
 void Player::play()
 {

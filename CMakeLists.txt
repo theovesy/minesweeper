@@ -6,5 +6,8 @@ project(
     DESCRIPTION "Minesweeper game"
 )
 
-add_executable(main src/main.cpp src/game/game.cpp src/player/player.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/player/player.cpp)
 
+add_subdirectory(src/game)
+
+target_link_libraries(${PROJECT_NAME} minesweeper_game)
